@@ -39,13 +39,17 @@ function toggleVid() {
   }
   playing = !playing;
 }
-
 function draw() {
-  background(0);
+  background(255);
   
   if (scene != 2) {
     background(0);
-  }
+    fill(255, 0, 0); // Red color
+  textSize(32);
+  textAlign(CENTER);
+  text('never give up', 0, -200);
+}
+  
   
   if (scene == 1) {
     doScene1();
@@ -74,31 +78,16 @@ function doScene1() {
   button.hide();
   rotateY(frameCount * 0.01);
   image(img, -imageW/2, -imageH/2, imageW, imageH);
-
-  fill(255);
-  text("JUST DO IT", width/2, height/2);
 }
 
 function doScene2() {
   select('canvas').show();
   video.hide();
   button.hide();
-
-  // Add text "never give up" at the top
-  fill(255, 0, 0); // Red color
-  textSize(32);
-  textAlign(CENTER);
-  text('never give up', 0, -height/2 + 50);
 }
 
 function doScene3() {
   select('canvas').hide();
   video.show();
   button.show();
-
-  fill(255);
-  textSize(32);
-  textAlign(CENTER);
-  text('just do it', 0, imageH/2 + 50);
 }
- 
